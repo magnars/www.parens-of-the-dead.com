@@ -2,7 +2,7 @@
   (:require [clojure.java.io :as io]
             [clojure.string :as str]
             [hiccup.core :refer [html]]
-            [parens.episodes :refer [episode-url episode-name embed-video]]
+            [parens.episodes :refer [episode-url episode-name episode-github-url embed-video]]
             [stasis.core :as stasis]))
 
 (defn no-widows
@@ -49,6 +49,7 @@
           [:li "Check out " [:a {:href (episode-url next-episode)} (episode-name next-episode)] "."]
           [:li "Follow " [:a {:href "https://twitter.com/parensofthedead"}
                           "@parensofthedead"] " to be notified when the next episode is ready."])
+        [:li "Peruse the " [:a {:href (episode-github-url episode)} "code on GitHub"] "."]
         [:li "Take a look at the " [:a {:href "/"} "episode overview"] "."]
         [:li "Leave your comments or questions below. Underground."]]]]]
     [:div.comments.content
