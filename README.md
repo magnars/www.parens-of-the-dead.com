@@ -1,6 +1,6 @@
 # Parens of the Dead
 
-The code behind [www.parens-of-the-dead.com](www.parens-of-the-dead.com).
+The code behind [www.parens-of-the-dead.com](http://www.parens-of-the-dead.com).
 
 Made with [Stasis](https://github.com/magnars/stasis) for static site
 generation, [Hiccup](https://github.com/weavejester/hiccup) to
