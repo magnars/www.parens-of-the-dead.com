@@ -1,0 +1,8 @@
+@import 'reset.css';
+@import 'base.css';
+@import "480.css" screen and (min-width: 480px);
+@import "600.css" screen and (min-width: 600px);
+@import "800.css" screen and (min-width: 800px);
+@import "1600.css" screen and (min-width: 1600px);
+
+.content, .footer {width: 800px;}

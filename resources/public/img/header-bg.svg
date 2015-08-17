@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="header-bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1600px" height="300px" viewBox="0 0 1600 300" enable-background="new 0 0 1600 300" xml:space="preserve">
+<polygon opacity="0.5" fill="#1f1f1f" points="1480,290 1410,270 1380,250 1300,280 1240,250 1120,280 1050,260 960,290 890,250 
+	780,270 640,250 490,280 400,250 300,290 210,260 100,290 0,270 0,0 1600,0 1600,270 "/>
+<polygon fill="#1f1f1f" points="1600,230 1520,250 1460,220 1310,250 1200,200 1150,240 1030,190 930,240 840,210 730,240 590,210 
+	550,240 450,250 380,220 280,240 230,190 140,250 0,230 0,0 1600,0 "/>
+</svg>
