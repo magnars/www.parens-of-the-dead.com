@@ -1,12 +1,12 @@
 (ns parens.episodes)
 
-(defn episode-url [episode]
+(defn get-url [episode]
   (str "/" (-> episode :prefixes :url) (:number episode) ".html"))
 
-(defn episode-name [episode]
+(defn get-name [episode]
   (str "Episode " (:number episode) ": " (:name episode)))
 
-(defn episode-github-url [episode]
+(defn get-code-url [episode]
   (str "https://github.com/magnars/parens-of-the-dead/tree/episode-" (:number episode)))
 
 (defn video-url [episode]

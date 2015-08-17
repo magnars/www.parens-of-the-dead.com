@@ -4,13 +4,14 @@
             [clojure.string :as str]
             [hiccup.core :refer [html]]
             [optimus.assets.creation :refer [last-modified]]
-            [parens.episodes :refer [episode-url video-url]])
+            [parens.episodes :refer [get-url video-url]])
   (:import java.text.SimpleDateFormat
            java.util.Date))
 
-(defn to-id-str [str]
+(defn to-id-str
   "Replaces all special characters with dashes, avoiding leading,
    trailing and double dashes."
+  [str]
   (-> (.toLowerCase str)
       (str/replace #"[^a-zA-Z0-9]+" "-")
       (str/replace #"-$" "")
@@ -21,7 +22,7 @@
    [:title (:name episode)]
    [:updated (str (:date episode) "T00:00:00+02:00")]
    [:author [:name "Magnar Sveen"]]
-   [:link {:href (episode-url episode)}]
+   [:link {:href (get-url episode)}]
    [:id (str "urn:parens:feed:episode:" (to-id-str (:name episode)))]
    [:media:content {:url (video-url episode)
                     :type "application/x-shockwave-flash"

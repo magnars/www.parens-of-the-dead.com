@@ -1,6 +1,5 @@
 (ns parens.layout
-  (:require [clojure.string :as str]
-            [hiccup.page :refer [html5]]
+  (:require [hiccup.page :refer [html5]]
             [optimus.link :as link]))
 
 (defn- serve-to-media-query-capable-browsers [tag]

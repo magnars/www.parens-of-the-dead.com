@@ -1,7 +1,6 @@
 (ns parens.web
   (:require [clojure.string :as str]
             [optimus.assets :as assets]
-            [optimus.assets.load-css :refer [external-url?]]
             [optimus.export]
             [optimus.link :as link]
             [optimus.optimizations :as optimizations]
