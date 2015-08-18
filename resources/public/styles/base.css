@@ -40,7 +40,7 @@ a.box {text-decoration: none; color: #1f1f1f;}
 a.episode-box:hover {opacity: 1;}
 
 .next {margin: 40px 0 0; text-align: center;}
-.footer {max-width: 800px; padding: 0 10px; margin: 150px auto 50px; color: #999; font-size: 13px; text-align: center;}
+.footer {max-width: 800px; padding: 0 10px; margin: 120px auto 30px; color: #999; font-size: 13px; text-align: center;}
 
 .video-embed { background: #000; position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; }
 .video-embed iframe,
