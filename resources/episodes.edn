@@ -1,3 +1,4 @@
 [{:prefixes {:url "e" :disqus ""}
   :episodes [{:number "1" :youtube "aWJPlRVZX90" :date "2015-08-18" :name "Lying in the Ground" :description "Starting with an empty folder, we'll lay the technical groundwork for our game. We'll get a Clojure web server up and running, compiling and sending ClojureScript to the browser."}
-             {:number "2" :youtube "zIajwJDi4wY" :date "2015-08-18" :name "Frontal Assault" :description "In this one, we create most of the front-end code. We take a look at the data structure that describes the game, using that to build up our UI."}]}]
+             {:number "2" :youtube "zIajwJDi4wY" :date "2015-08-18" :name "Frontal Assault" :description "In this one, we create most of the front-end code. We take a look at the data structure that describes the game, using that to build up our UI."}
+             {:number "3" :youtube "7Q4-BYOQZXg" :date "2015-08-21" :name "What Lies Beneath" :description "The player has only one action available; revealing a tile. We'll start implementing the central `reveal-tile` function on the backend, writing tests along the way."}]}]
