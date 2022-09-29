@@ -1,6 +1,5 @@
 (ns parens.pages
   (:require [clojure.string :as str]
-            [hiccup.core :refer [html]]
             [parens.episodes :as ep]))
 
 (defn no-widows
@@ -19,11 +18,15 @@
    (list
     [:div.illustration]
     [:div.content
-     (map render-episode (:episodes (first (:seasons content))))
+     (map render-episode (:episodes (first (remove :old? (:seasons content)))))
      [:p.next
       "Next episode? Follow "
       [:a {:href "https://twitter.com/parensofthedead"}
-       "@parensofthedead"]]])
+       "@parensofthedead"]]
+     [:p.nnext
+      "Looking for the old episodes? "
+      [:a {:href "/s1"}
+       "Season one"]]])
    :color "red"})
 
 (defn- insert-disqus-thread [html episode]
@@ -31,7 +34,7 @@
       (str/replace #":episode-identifier" (str "episode_" (-> episode :prefixes :disqus) (:number episode)))
       (str/replace #":episode-link" (ep/get-url episode))))
 
-(defn- episode-page [episode next-episode content]
+(defn- episode-page [season episode next-episode content]
   {:body
    (list
     [:div.episode
@@ -47,7 +50,7 @@
           [:li "Check out " [:a {:href (ep/get-url next-episode)} (ep/get-name next-episode)] "."]
           [:li "Follow " [:a {:href "https://twitter.com/parensofthedead"}
                           "@parensofthedead"] " to be notified when the next episode is ready."])
-        [:li "Peruse the " [:a {:href (ep/get-code-url episode)} "code on GitHub"] "."]
+        [:li "Peruse the " [:a {:href (ep/get-code-url season episode)} "code on GitHub"] "."]
         [:li "Take a look at the " [:a {:href "/"} "episode overview"] "."]
         [:li "Leave your comments or questions below. Underground."]]]]]
     [:div.comments.content
@@ -55,16 +58,33 @@
       (insert-disqus-thread (:disqus-html content) episode)]])
    :color (:color episode)})
 
-(defn create-episode-pages [content]
-  (->> (:seasons content)
-       (mapcat :episodes)
+(defn create-season-episode-pages [content season]
+  (->> (:episodes season)
        (partition-all 2 1)
        (map (fn [[episode next-episode]]
               [(ep/get-url episode)
-               (episode-page episode next-episode content)]))
+               (episode-page season episode next-episode content)]))))
+
+(defn create-episode-pages [content]
+  (into {} (mapcat #(create-season-episode-pages content %) (:seasons content))))
+
+(defn create-season-pages [content]
+  (->> (for [season (:seasons content)]
+         [(:season-url season)
+          {:body
+           (list
+            [:div.illustration]
+            [:div.content
+             (map render-episode (:episodes season))
+             [:p.next
+              "Next episode? Follow "
+              [:a {:href "https://twitter.com/parensofthedead"}
+               "@parensofthedead"]]])
+           :color "red"}])
        (into {})))
 
 (defn get-pages [content]
   (merge
    {"/" (index content)}
-   (create-episode-pages content)))
+   (create-episode-pages content)
+   (create-season-pages content)))

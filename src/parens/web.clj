@@ -28,9 +28,6 @@
       (render-page content request)
       (use-optimized-assets request)))
 
-(defn update-vals [m f]
-  (into {} (for [[k v] m] [k (f v)])))
-
 (defn get-pages []
   (let [content (load-content)]
     (-> content
