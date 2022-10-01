@@ -58,7 +58,8 @@
            [:a {:href (str "https://www.youtube.com/watch?v=" (:youtube episode))}
             "YouTube comments"]
            " or " [:a {:href "https://twitter.com/parensofthedead"}
-                   "@parensofthedead"]])]]]]
+                   "@parensofthedead"]
+           "."])]]]]
     (when (:enable-disqus? season)
       [:div.comments.content
        [:div.box
