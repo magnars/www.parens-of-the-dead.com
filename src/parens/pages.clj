@@ -52,8 +52,13 @@
                           "@parensofthedead"] " to be notified when the next episode is ready."])
         [:li "Peruse the " [:a {:href (ep/get-code-url season episode)} "code on GitHub"] "."]
         [:li "Take a look at the " [:a {:href "/"} "episode overview"] "."]
-        (when (:enable-disqus? season)
-          [:li "Leave your comments or questions below. Underground."])]]]]
+        (if (:enable-disqus? season)
+          [:li "Leave your comments or questions below. Underground."]
+          [:li "Questions? Ask away in either the "
+           [:a {:href (str "https://www.youtube.com/watch?v=" (:youtube episode))}
+            "YouTube comments"]
+           " or " [:a {:href "https://twitter.com/parensofthedead"}
+                   "@parensofthedead"]])]]]]
     (when (:enable-disqus? season)
       [:div.comments.content
        [:div.box
