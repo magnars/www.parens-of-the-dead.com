@@ -52,10 +52,12 @@
                           "@parensofthedead"] " to be notified when the next episode is ready."])
         [:li "Peruse the " [:a {:href (ep/get-code-url season episode)} "code on GitHub"] "."]
         [:li "Take a look at the " [:a {:href "/"} "episode overview"] "."]
-        [:li "Leave your comments or questions below. Underground."]]]]]
-    [:div.comments.content
-     [:div.box
-      (insert-disqus-thread (:disqus-html content) episode)]])
+        (when (:enable-disqus? season)
+          [:li "Leave your comments or questions below. Underground."])]]]]
+    (when (:enable-disqus? season)
+      [:div.comments.content
+       [:div.box
+        (insert-disqus-thread (:disqus-html content) episode)]]))
    :color (:color episode)})
 
 (defn create-season-episode-pages [content season]

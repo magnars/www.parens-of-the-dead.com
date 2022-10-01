@@ -1,5 +1,6 @@
 [{:season-url "/s1/"
   :prefixes {:url "e" :disqus "" :github "parens-of-the-dead"}
+  :enable-disqus? true
   :old? true
   :episodes [{:number "1" :youtube "aWJPlRVZX90" :date "2015-08-18" :name "Lying in the Ground" :description "Starting with an empty folder, we'll lay the technical groundwork for our game. We'll get a Clojure web server up and running, compiling and sending ClojureScript to the browser."}
              {:number "2" :youtube "zIajwJDi4wY" :date "2015-08-18" :name "Frontal Assault" :description "In this one, we create most of the front-end code. We take a look at the data structure that describes the game, using that to build up our UI."}
@@ -10,6 +11,6 @@
              {:number "7" :youtube "wVYglsyRnKI" :date "2015-10-12" :name "Eaten by Zombies" :description "It's time to die. Last episode we introduced tick to turn back tiles. But that is only a secondary feature of the tick function. The main function is counting down till your brain is devoured by ravenous zombies. So there."}
              {:number "8" :youtube "DHpk_-1H7Qo" :date "2015-11-15" :name "The Hour of Reckoning" :description "We're trying to make it out alive in this last episode. Revealing all five houses takes us where? To safety? Let's hope so."}]}
  {:season-url "/s2/"
-  :prefixes {:url "s2e" :disqus "s2" :github "parens-of-the-dead-s2"}
+  :prefixes {:url "s2e" :github "parens-of-the-dead-s2"}
   :episodes [{:number "1" :youtube "6qnNtVdf08Q" :date "2022-10-01" :name "It Lives Again" :description "Starting with an empty folder sure is a choice. Much like digging your way out of a grave, it can be intimidating, perhaps because it's not something you do every day. Watch us struggle with these issues and more in the very first episode of Parens of the Dead."}
              {:number "2" :youtube "CyveUnHzc7g" :date "2022-10-01" :name "Shambling Along" :description "Watch us totally ruin a pristine, beautiful lightly tinted purple page by adding decrepit buildings to it in this very second episode of Parens of the Dead. We'll get ClojureScript up and running with surprisingly little hassle. There might even be jokes."}]}]
