@@ -41,7 +41,8 @@
      [:div.content
       [:div.video-embed (ep/embed-video episode)]
       [:div.box
-       [:h2 (no-widows (:name episode))]
+       [:h2 (no-widows (or (:title episode)
+                           (:name episode)))]
        (:description episode)]
       [:div.box
        [:h3 "Done watching?"]

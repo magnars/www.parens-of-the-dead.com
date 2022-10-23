@@ -4,7 +4,8 @@
   (str "/" (-> episode :prefixes :url) (:number episode) ".html"))
 
 (defn get-name [episode]
-  (str "Episode " (:number episode) ": " (:name episode)))
+  (or (:title episode)
+      (str "Episode " (:number episode) ": " (:name episode))))
 
 (defn get-code-url [season episode]
   (str "https://github.com/magnars/" (-> season :prefixes :github) "/tree/episode-" (:number episode)))
